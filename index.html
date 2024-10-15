@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=960px">
+    <meta charset="UTF-8">
+    <title>AI Generated Art Gallery</title>
+    <link rel="stylesheet" href="stylemain.css">
+    <link rel="icon" href="I.png" type="image/x-icon">
+</head>
+<style>
+    .container1{
+        position: absolute;
+        align-items: center;
+        margin-left: 1px;
+        width: 1150px;
+        height: 650px;
+        background: #000000;
+        margin-top: 10px;
+    }
+    
+    .container1 .slide .item{
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%); 
+        border-radius: 20px;
+        box-shadow: 0 30px 50px #000000;
+        background-position: 50% 50%;
+        background-size: cover;
+        display: inline-block;
+        transition: 0.5s;
+    }
+    
+    .slide .item:nth-child(1),
+    .slide .item:nth-child(2){
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .slide .item:nth-child(3){
+        left: 50%;
+    }
+    .slide .item:nth-child(4){
+        left: calc(50% + 220px);
+    }
+    .slide .item:nth-child(5){
+        left: calc(50% + 440px);
+    }
+    
+    /* here n = 0, 1, 2, 3,... */
+    .slide .item:nth-child(n + 6){
+        left: calc(50% + 660px);
+        opacity: 0;
+    }
+    
+    
+    
+    .item .content{
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        width: 300px;
+        text-align: left;
+        color: #eee;
+        transform: translate(0, -50%);
+        font-family: system-ui;
+        display: none;
+    }
+    
+    
+    .slide .item:nth-child(2) .content{
+        display: block;
+    }
+    
+    
+    .content .name{
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: bold;
+        opacity: 0;
+        animation: animate 1s ease-in-out 1 forwards;
+        text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0 70px black; 
+    }
+    
+    .content .des{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
+        text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px black, 0 0 50px black, 0 0 60px black, 0 0 70px black; 
+    }
+    
+    .content button{
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.6s 1 forwards;
+    }
+    
+    
+    @keyframes animate {
+        from{
+            opacity: 0;
+            transform: translate(0, 100px);
+            filter: blur(33px);
+        }
+    
+        to{
+            opacity: 1;
+            transform: translate(0);
+            filter: blur(0);
+        }
+    }
+    
+    
+    
+    .but{
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+    }
+    
+    .but button{
+        width: 40px;
+        height: 35px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        margin: 0 5px;
+        border: 1px solid #000;
+        transition: 0.3s;
+    }
+    
+    .but button:hover{
+        background: #ababab;
+        color: #fff;
+    }
+        </style>
+<body>
+    <header>
+      <nav>
+        <div class="sign-in">
+            <a href="signin.html">
+            <button id="signin-button">Sign In</button></a>
+        </div>
+    </nav>
+        <div class="logo">
+            <img src="I.png" alt="Logo">
+          </div>
+        <h1 class="left-align">...... Generated Art Gallery</h1>
+        <div class="start-menu">
+        <nav>
+            <ul>
+                <li><a href="#home" >Home</a></li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#create" >Create</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+        <section class="home-section" id="home">
+            <div class="full-screen-image" style="background-image: url(art1.jpg)">
+                <h1>Welcome to our AI Generated Art Gallery</h1>
+                <p>"Art speaks where words are unable to explain."</p>
+            </div>
+        </section>
+        <section class="about-section" id="about">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <div class="container1">
+                <div class="slide">
+                    <div class="item" style="background-image: url(ar.jpg);">
+                        
+                        <div class="content">
+                            <div class="name">Painting</div>
+                            <div class="des">Painting is a visual art form that involves applying pigments, colors, and other mediums onto a surface, such as canvas, paper, wood, or even walls. It's one of the oldest and most traditional forms of artistic expression, dating back to ancient civilizations.</div>  
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url(painting.jpg);">
+                        
+                        <div class="content">
+                            <div class="name">Drawing</div>
+                            <div class="des">Drawing encompasses a broader spectrum of techniques and styles. It involves using different tools such as pencils, pens, charcoal, or pastels to create lines, tones, and textures that form the basis of the artwork.</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url(art.jpg);">
+                        
+                        <div class="content">
+                            <div class="name">Photography</div>
+                            <div class="des">Photography is the art and practice of creating images by recording light or other electromagnetic radiation, either electronically by means of an image sensor or chemically by means of light-sensitive material such as photographic film.</div>
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url(anime1.jpg);">
+                        
+                        <div class="content">
+                            <div class="name">Anime art style</div>
+                            <div class="des">Art Style-Anime refers to a style of animation that originated in Japan and has become popular worldwide.Anime is known for its distinct visual style, featuring colorful artwork, exaggerated facial expressions, large, expressive eyes, and elaborate character designs.</div> 
+                        </div>
+                    </div>
+                    <div class="item" style="background-image: url(VR.jpg);">
+                        
+                        <div class="content">
+                            <div class="name">Visual art</div>
+                            <div class="des">Visual art encompasses a vast spectrum of artistic expressions primarily appreciated through sight.</div> 
+                        </div>
+                    </div>
+                </div>      
+                <div class="but">
+                    <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div><script>
+        let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})
+    </script>
+          </section>
+        <section class="create-section" id="create">
+            <div class="full-screen-image2">
+              <h1>AGI</h1><i>-AI Generated Image</i><br>
+              <div class="menu"></div>
+              <div class="container">
+             <p class="verticalalign"> Art is a profound expression of human creativity and imagination. 
+                It encompasses a vast array of forms, mediums, and styles, serving as a means of communication, exploration, and interpretation of ideas, emotions, and experiences.
+                Art is not limited by boundaries.
+                The beauty of art lies in its ability to provoke thought, inspire, and connect individuals on a deeply human level, fostering a sense of understanding and appreciation for diverse experiences and viewpoints.</p></div>
+              <br><br><br><br><br>
+                <a href="main.html" class="button">Create</a>
+            </div>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h4><u>About Us</u></h4>
+            <p>"Alone, we can do so little; together, we can do so much."</p>
+          </div>
+          <div class="footer-section contact">
+            <h4><u>Contact Information</u></h4>
+            <p>Bangalore,Karnataka,India</p>
+            <p>Email: teamCodeRising@gmail.com</p>
+            <p>Phone: +91987654321</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 AI-Artgallery.com | Designed by Team CodeRising</p>
+        </div>
+      </footer>
+</body>
+</html>
